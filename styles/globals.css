@@ -4,6 +4,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: 'IBM Plex mono', Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -35,6 +36,7 @@ picture {
 
 button,
 a {
+  padding: 0;
   color: currentColor;
   font-family: inherit;
   font-size: inherit;

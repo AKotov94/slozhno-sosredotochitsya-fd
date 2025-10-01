@@ -2,4 +2,126 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--page-background-image);
+  background-position: center;
+  background-attachment: fixed;
+  background-color: var(--main-color);
+  padding: var(--page-padding);
+}
+
+.header {
+  block-size: 100vh;
+  min-block-size: var(--header-min-block-size);
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+}
+
+.header::before {
+  content: "";
+  block-size: 25px;
+  inline-size: 25px;
+  border-top: 1px solid var(--secondary-color);
+  border-right: 1px solid var(--secondary-color);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.header::after {
+  content: "";
+  block-size: 25px;
+  inline-size: 25px;
+  border-bottom: 1px solid var(--secondary-color);
+  border-left: 1px solid var(--secondary-color);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.header__decoration-element {
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--secondary-color);
+  position: absolute;
+  top: 10px;
+  right: 19px;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.header__decoration-element::after {
+  content: "";
+  block-size: 9px;
+  inline-size: 9px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 4px 2px var(--secondary-color);
+  gap: 10px;
+  align-self: center;
+}
+
+.header__theme-menu{
+  margin: 65px 0;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 70px;
+  block-size: 26px;
+  font-size: 18px;
+  line-height: 23px;
+  color: var(--secondary-color);
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  /* Компенсация строчного написания для вертикального выравнивания */
+  padding-bottom: 3px;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--secondary-color);  
+}
+
+.header__slogan {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  color: var(--accent-color);
+  text-shadow: 4px 4px var(--secondary-color);
+  line-height: 83%;
+}
+
+.header__title {
+  font-size: 18px;
+  width: 100%;
+  margin: 0 0 auto;
+  display: inline-block;
+  color: var(--main-color);
+  background-color: var(--secondary-color);
+  margin: 55px 0 auto;
+}
+
+.header__title-span {
+  display: inline-block;
+  font-size: 18px;
+  inline-size: 100%;
+  color: var(--main-color);
+  background-color: var(--secondary-color);
+  block-size: min-content;
+}
+
+.section {
+
+}
+
+.section__title {
+  
 }
