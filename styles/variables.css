@@ -11,8 +11,10 @@
   --secondary-color: rgba(255, 0, 112, 1);
   --accent-color: rgba(219, 0, 255, 1);
 
-  --header-min-block-size: 668px;
-  --page-padding: 10px;
-  
+  --min-viewport-block-size: 668px;
+  --page-padding: 2.5vi 2.5vi 0;/*10px 10px 0;*/
+  --text-size: 18px;
+  --font-size-slogan: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 
+  --decoration-offset: 10px;
 }
