@@ -4,18 +4,25 @@
 */
 
 :root {
-  --page-background-image: url(../images/cover-image-dark.png);
 
+  /* Переключение темы */
+
+  --page-background-image: url(../images/cover-image-dark.png);
   --main-color: rgba(0, 0, 40, 1);
   --text-color: rgba(241, 178, 206, 1);
   --secondary-color: rgba(255, 0, 112, 1);
   --accent-color: rgba(219, 0, 255, 1);
+  --shadow-color: rgba(255, 0, 112, 1);
+  --title-color: rgba(255, 0, 112, 1);
+  --sub-title-color: rgba(0, 0, 40, 1);
+  --decoration-color: rgba(255, 0, 112, 1);
+  --header-decoration-element-color: rgba(255, 0, 112, 1);
 
-  --min-viewport-block-size: 668px;
+  /* Адаптивность */
 
   --text-size: 18px;
+  --min-viewport-block-size: 668px;
   --font-size-slogan: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-
   --decoration-offset: 10px;
   --page-padding: 0 10px;
   --header-padding: 10px 0;

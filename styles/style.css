@@ -24,8 +24,8 @@
   content: "";
   block-size: 25px;
   inline-size: 25px;
-  border-top: 1px solid var(--secondary-color);
-  border-right: 1px solid var(--secondary-color);
+  border-block-start: 1px solid var(--decoration-color);
+  border-inline-end: 1px solid var(--decoration-color);
   position: absolute;
   top: var(--decoration-offset);
   right: 0;
@@ -35,8 +35,8 @@
   content: "";
   block-size: 25px;
   inline-size: 25px;
-  border-bottom: 1px solid var(--secondary-color);
-  border-left: 1px solid var(--secondary-color);
+  border-block-end: 1px solid var(--decoration-color);
+  border-inline-start: 1px solid var(--decoration-color);
   position: absolute;
   bottom: var(--decoration-offset);
   left: 0;
@@ -45,7 +45,7 @@
 .header__decoration-element {
   font-size: inherit;
   line-height: 25px;
-  color: var(--secondary-color);
+  color: var(--header-decoration-element-color);
   position: absolute;
   top: var(--decoration-offset);
   right: 9px;
@@ -58,8 +58,8 @@
   block-size: 9px;
   inline-size: 9px;
   border-radius: 50%;
-  background-color: var(--secondary-color);
-  box-shadow: 0 0 4px 2px var(--secondary-color);
+  background-color: var(--header-decoration-element-color);
+  box-shadow: 0 0 4px 2px var(--header-decoration-element-color);
   gap: 10px;
   align-self: center;
 }
@@ -81,23 +81,24 @@
   inline-size: 70px;
   block-size: 26px;
   line-height: 23px;
-  color: var(--secondary-color);
+  color: var(--decoration-color);
   background-color: transparent;
   border: none;
   text-transform: lowercase;
   /* Компенсация строчного написания для вертикального выравнивания */
-  padding-bottom: 3px;
+  padding-block-end: 3px;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--secondary-color);  
+  border: 1px solid var(--decoration-color);
+  pointer-events: none;  
 }
 
 .header__slogan {
   font-size: var(--font-size-slogan);
   font-weight: 700;
   color: var(--accent-color);
-  text-shadow: 4px 4px var(--secondary-color);
+  text-shadow: 4px 4px var(--shadow-color);
   line-height: 83%;
 }
 
@@ -107,7 +108,7 @@
 }
 
 .title-decor {
-  color: var(--main-color);
+  color: var(--sub-title-color);
   background-color: var(--secondary-color);
   font-weight: 700;
   font-size: inherit;
@@ -132,7 +133,7 @@
 
 .section__title {
   font-size: inherit;
-  color: var(--secondary-color);
+  color: var(--title-color);
 }
 
 .section__list {
@@ -176,8 +177,8 @@
   content: "";
   block-size: 25px;
   inline-size: 25px;
-  border-top: 1px solid var(--secondary-color);
-  border-right: 1px solid var(--secondary-color);
+  border-block-start: 1px solid var(--decoration-color);
+  border-inline-end: 1px solid var(--decoration-color);
   position: absolute;
   top: var(--decoration-offset);
   right: 0;
@@ -187,8 +188,8 @@
   content: "";
   block-size: 25px;
   inline-size: 25px;
-  border-bottom: 1px solid var(--secondary-color);
-  border-left: 1px solid var(--secondary-color);
+  border-block-end: 1px solid var(--decoration-color);
+  border-inline-start: 1px solid var(--decoration-color);
   position: absolute;
   bottom: var(--decoration-offset);
   left: 0;
@@ -204,7 +205,7 @@
 
 .link {
   text-decoration: none;
-  text-shadow: 2px 2px var(--secondary-color);
+  text-shadow: 2px 2px var(--shadow-color);
 }
 
 @media (768px <= width <  1024px) {
