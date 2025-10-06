@@ -30,3 +30,31 @@
   --gallery-gap: 10px;
   --section-gap: 50px;
 }
+
+@media (768px <= width < 1024px) {
+
+  :root {
+    --page-padding: 0 20px;
+    --header-padding: 20px 0;
+    --main-margin: 60px 0;
+    --min-viewport-block-size: 1024px;
+    --font-size-slogan: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --decoration-offset: 20px;
+    --gallery-gap: 20px;
+    --section-gap: 80px;
+  }
+}
+
+@media (width >= 1024px) {
+
+  :root {
+    --page-padding: 0 20px;
+    --header-padding: 20px 0;
+    --main-margin: 60px 0;
+    --min-viewport-block-size: 768px;
+    --font-size-slogan: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --decoration-offset: 20px;
+    --gallery-gap: 20px;
+    --section-gap: 80px;
+  }
+}

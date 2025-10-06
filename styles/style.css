@@ -3,33 +3,13 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--page-background-image);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-color: var(--main-color);
   padding: var(--page-padding);
   font-size: var(--text-size);
-}
-
-.header {
-  block-size: 100vh;
-  min-block-size: var(--min-viewport-block-size);
-  padding: var(--header-padding);
-  display: grid;
-  align-items: center;
-  grid-template-rows: 1fr min-content 1fr;
-  position: relative;
-}
-
-.header::before {
-  content: '';
-  block-size: 25px;
-  inline-size: 25px;
-  border-block-start: 1px solid var(--decoration-color);
-  border-inline-end: 1px solid var(--decoration-color);
-  position: absolute;
-  top: var(--decoration-offset);
-  right: 0;
 }
 
 .header::after {
@@ -41,6 +21,50 @@
   position: absolute;
   bottom: var(--decoration-offset);
   left: 0;
+}
+
+.decorated-zone {
+  block-size: 100vh;
+  min-block-size: var(--min-viewport-block-size);
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: '';
+  block-size: 25px;
+  inline-size: 25px;
+  border-block-start: 1px solid var(--decoration-color);
+  border-inline-end: 1px solid var(--decoration-color);
+  position: absolute;
+  top: var(--decoration-offset);
+  right: 0;
+}
+
+.decorated-zone::after {
+  content: '';
+  block-size: 25px;
+  inline-size: 25px;
+  border-block-end: 1px solid var(--decoration-color);
+  border-inline-start: 1px solid var(--decoration-color);
+  position: absolute;
+  bottom: var(--decoration-offset);
+  left: 0;
+}
+
+.title {
+  font-size: var(--font-size-slogan);
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 83%;
+  user-select: none;
+}
+
+.header {
+  padding: var(--header-padding);
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr min-content 1fr;
+
 }
 
 .header__decoration-element {
@@ -104,21 +128,16 @@
   pointer-events: none;
 }
 
-.header__slogan {
-  font-size: var(--font-size-slogan);
-  font-weight: 700;
-  color: var(--accent-color);
+.header__title {
   text-shadow: 4px 4px var(--shadow-color);
-  line-height: 83%;
-  user-select: none;
 }
 
-.header-title {
+.header__slogan {
   font-size: inherit;
   line-height: 23.4px;
 }
 
-.header-title__line {
+.header__slogan-line {
   display: inline-block;
 }
 
@@ -181,43 +200,13 @@
 }
 
 .footer {
-  block-size: 100vh;
-  min-block-size: var(--min-viewport-block-size);
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.footer::before {
-  content: '';
-  block-size: 25px;
-  inline-size: 25px;
-  border-block-start: 1px solid var(--decoration-color);
-  border-inline-end: 1px solid var(--decoration-color);
-  position: absolute;
-  top: var(--decoration-offset);
-  right: 0;
-}
-
-.footer::after {
-  content: '';
-  block-size: 25px;
-  inline-size: 25px;
-  border-block-end: 1px solid var(--decoration-color);
-  border-inline-start: 1px solid var(--decoration-color);
-  position: absolute;
-  bottom: var(--decoration-offset);
-  left: 0;
-}
-
-.footer__slogan {
-  font-size: var(--font-size-slogan);
-  font-weight: 700;
-  color: var(--accent-color);
+.footer__title {
   text-shadow: 2px 2px var(--secondary-color);
-  line-height: 83%;
-  user-select: none;
 }
 
 .link {
@@ -235,17 +224,6 @@
 
 @media (768px <= width < 1024px) {
 
-  :root {
-    --page-padding: 0 20px;
-    --header-padding: 20px 0;
-    --main-margin: 60px 0;
-    --min-viewport-block-size: 1024px;
-    --font-size-slogan: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    --decoration-offset: 20px;
-    --gallery-gap: 20px;
-    --section-gap: 80px;
-  }
-
   .header {
     grid-template-rows: 1fr min-content 1fr;
     grid-template-columns: 1fr 1fr;
@@ -255,13 +233,13 @@
     grid-column: span 2;
   }
 
-  .header__slogan {
+  .header__title{
     grid-column: span 2;
     position: relative;
     right: var(--decoration-offset);
   }
 
-  .header-title {
+  .header__slogan {
     grid-column: 2;
   }
 
@@ -292,41 +270,31 @@
     grid-template-rows: repeat(3, min-content);
   }
 
-  .gallery__picture-sunset {
+  .gallery > .gallery__picture:first-child {
     grid-column: span 2;
   }
 
-  .gallery__picture-ice-cream {
+  .gallery > .gallery__picture:last-child {
+    grid-column: span 2;
+  }
+
+  .gallery > .gallery__picture:nth-child(2) {
     grid-row: span 2;
     block-size: 100%;
     object-fit: cover;
     object-position: center;
   }
-
-  .gallery__picture-tape {
+  
+  .gallery > .gallery__picture:nth-child(3) {
     grid-row: span 2;
     block-size: 100%;
     object-fit: cover;
     object-position: center;
-  }
-
-  .gallery__picture-street {
-    grid-column: span 2;
   }
 }
 
-@media (width >= 1024px) {
 
-  :root {
-    --page-padding: 0 20px;
-    --header-padding: 20px 0;
-    --main-margin: 60px 0;
-    --min-viewport-block-size: 768px;
-    --font-size-slogan: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    --decoration-offset: 20px;
-    --gallery-gap: 20px;
-    --section-gap: 80px;
-  }
+@media (width >= 1024px) {
 
   .header {
     grid-template-rows: 1fr min-content 1fr;
@@ -343,13 +311,13 @@
     flex-direction: row;
   }
 
-  .header__slogan {
+  .header__title {
     grid-column: span 2;
     position: relative;
     right: var(--decoration-offset);
   }
 
-  .header-title {
+  .header__slogan {
     grid-column: 2;
   }
 
@@ -395,25 +363,25 @@
     grid-template-rows: repeat(3, min-content);
   }
 
-  .gallery__picture-sunset {
+    .gallery > .gallery__picture:first-child {
     grid-column: span 2;
   }
 
-  .gallery__picture-ice-cream {
+  .gallery > .gallery__picture:last-child {
+    grid-column: span 2;
+  }
+
+  .gallery > .gallery__picture:nth-child(2) {
     grid-row: span 2;
     block-size: 100%;
     object-fit: cover;
     object-position: center;
   }
-
-  .gallery__picture-tape {
+  
+  .gallery > .gallery__picture:nth-child(3) {
     grid-row: span 2;
     block-size: 100%;
     object-fit: cover;
     object-position: center;
-  }
-
-  .gallery__picture-street {
-    grid-column: span 2;
   }
 }
