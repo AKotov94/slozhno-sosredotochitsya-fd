@@ -3,6 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--page-background-image);
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-color: var(--main-color);
@@ -45,7 +46,7 @@
 .header__decoration-element {
   font-size: inherit;
   line-height: 25px;
-  color: var(--header-decoration-element-color);
+  color: var(--decoration-color);
   position: absolute;
   top: var(--decoration-offset);
   right: 9px;
@@ -58,8 +59,8 @@
   block-size: 9px;
   inline-size: 9px;
   border-radius: 50%;
-  background-color: var(--header-decoration-element-color);
-  box-shadow: 0 0 4px 2px var(--header-decoration-element-color);
+  background-color: currentColor;
+  box-shadow: 0 0 4px 2px currentColor;
   gap: 10px;
   align-self: center;
 }
@@ -81,16 +82,25 @@
   inline-size: 70px;
   block-size: 26px;
   line-height: 23px;
-  color: var(--decoration-color);
+  color: var(--button-color);
   background-color: transparent;
   border: none;
   text-transform: lowercase;
   /* Компенсация строчного написания для вертикального выравнивания */
   padding-block-end: 3px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-hover-outline-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid currentColor;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--decoration-color);
+  border: 1px solid currentColor;
   pointer-events: none;  
 }
 
@@ -100,11 +110,16 @@
   color: var(--accent-color);
   text-shadow: 4px 4px var(--shadow-color);
   line-height: 83%;
+  user-select: none;
 }
 
 .header-title{
   font-size: inherit;
   line-height: 23.4px;
+}
+
+.header-title__line {
+  display: inline-block;
 }
 
 .title-decor {
@@ -162,6 +177,7 @@
 .gallery__picture {
   inline-size: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 .footer {
@@ -201,11 +217,20 @@
   color: var(--accent-color);
   text-shadow: 2px 2px var(--secondary-color);
   line-height: 83%;
+  user-select: none;
 }
 
 .link {
   text-decoration: none;
   text-shadow: 2px 2px var(--shadow-color);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
 }
 
 @media (768px <= width <  1024px) {
@@ -274,12 +299,14 @@
   grid-row: span 2;
   block-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .gallery__picture-tape {
   grid-row: span 2;
   block-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .gallery__picture-street {
@@ -374,12 +401,14 @@
   grid-row: span 2;
   block-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .gallery__picture-tape {
   grid-row: span 2;
   block-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .gallery__picture-street {

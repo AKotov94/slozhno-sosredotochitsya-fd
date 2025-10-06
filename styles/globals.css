@@ -42,3 +42,13 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
+
+button,
+a:focus {
+  outline: none;
+}
+
+button,
+a:focus-visible {
+  outline: none;
+}
