@@ -1,3 +1,4 @@
+/* stylelint-disable value-keyword-case */
 /*
   Переменные для вашего проекта
   и их переопределение под различные устройства
@@ -6,7 +7,7 @@
 :root {
   /* Global */
 
-  --main-font: 'IBM Plex mono', arial, helvetica, monospace;
+  --main-font: 'IBM Plex mono', 'Courier New', Courier, monospace;
 
   /* Переключение темы */
 
