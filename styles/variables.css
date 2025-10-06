@@ -4,6 +4,10 @@
 */
 
 :root {
+  /* Global */
+
+  --main-font: 'IBM Plex mono', arial, helvetica, monospace;
+
   /* Переключение темы */
 
   --page-background-image: url(../images/cover-image-dark.png);

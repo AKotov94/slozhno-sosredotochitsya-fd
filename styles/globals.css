@@ -4,7 +4,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: 'IBM Plex mono', Arial, Helvetica, sans-serif;
+  font-family: var(--main-font);
 }
 
 body {
