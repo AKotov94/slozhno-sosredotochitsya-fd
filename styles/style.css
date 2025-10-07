@@ -12,17 +12,6 @@
   font-size: var(--text-size);
 }
 
-.header::after {
-  content: '';
-  block-size: 25px;
-  inline-size: 25px;
-  border-block-end: 1px solid var(--decoration-color);
-  border-inline-start: 1px solid var(--decoration-color);
-  position: absolute;
-  bottom: var(--decoration-offset);
-  left: 0;
-}
-
 .decorated-zone {
   block-size: 100vh;
   min-block-size: var(--min-viewport-block-size);
